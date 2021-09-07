@@ -18,11 +18,13 @@ const typeDefs = gql`
     title: String!
   }
 
-  type Query {
-    user: [School]
-    classes: [Class]
-    professors: [Professor]
-    class(id: ID!): Class
+  type enterBukz {
+    authors: String!
+    description: String!
+    bookId: String!
+    image: String!
+    link: String!
+    title: String!
   }
 
   # Set up an Auth type to handle returning data from a profile creating or user login
@@ -33,9 +35,9 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    login(email: String!, password: String!): Auth
+    enterBooks(book: enterBukz): User
+    removeComment(book: ID!): User
   }
 `;
 
