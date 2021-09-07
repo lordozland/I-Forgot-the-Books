@@ -9,10 +9,13 @@ const typeDefs = gql`
     savedBooks: [Book]
   }
 
-  type Comment {
-    _id: ID
-    commentText: String
-    createdAt: String
+  type Book {
+    authors: String!
+    description: String!
+    bookId: String!
+    image: String!
+    link: String!
+    title: String!
   }
 
   type Query {
